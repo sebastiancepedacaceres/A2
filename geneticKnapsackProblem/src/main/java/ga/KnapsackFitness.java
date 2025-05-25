@@ -27,8 +27,23 @@ public class KnapsackFitness extends FitnessFunction {
    * @param chromosome Chromosome to evaluate
    * @return fitness value
    */
-  @Override
+ @Override
   protected double evaluate(IChromosome chromosome) {
-    throw new UnsupportedOperationException("method not yet implemented");
+    int totalWeight = 0;
+    int totalValue = 0;
+
+    for (int i = 0; i < chromosome.size(); i++) {
+        boolean isSelected = (Boolean) chromosome.getGene(i).getAllele();
+        if (isSelected) {
+            totalWeight += myKnapsack.getWeight(i);
+            totalValue += myKnapsack.getValue(i);
+        }
+    }
+
+    if (totalWeight > myKnapsack.getMaxCapacity()) {
+        return 0; // Penaliza si excede
+    }
+    return totalValue;
   }
+
 }
