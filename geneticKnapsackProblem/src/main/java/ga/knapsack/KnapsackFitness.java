@@ -1,4 +1,5 @@
-package ga;
+package ga.knapsack;
+
 
 import org.jgap.FitnessFunction;
 import org.jgap.IChromosome;

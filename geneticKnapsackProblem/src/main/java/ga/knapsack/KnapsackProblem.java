@@ -1,4 +1,5 @@
-package ga;
+package ga.knapsack;
+
 
 public class KnapsackProblem {
     private final int maxCapacity;

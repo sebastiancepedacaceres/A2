@@ -1,4 +1,5 @@
-package ga;
+package ga.knapsack;
+
 
 import org.jgap.InvalidConfigurationException;
 import org.jgap.Chromosome;
